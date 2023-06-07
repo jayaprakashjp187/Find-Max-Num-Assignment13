@@ -2,18 +2,24 @@
 {
     internal class Program
     {
-        static void Main(string[] args)
+       public static void Main(string[] args)
         {
             Console.WriteLine("choose what program u want");
-            Console.WriteLine("1.finding max number using integer datatype\n2.finding maximum using float datatype\n3.finding maximum using string datatype");
+            Console.WriteLine("1.finding max number using integer datatype\n2.finding maximum using float datatype\n3.finding maximum using string datatype\n4.refactor the code using generics finding max all datatypes");
             int choose = Convert.ToInt32(Console.ReadLine());
             switch (choose)
             {
                 case 3:
+
                     Console.WriteLine("Maximum of three fruits is " + FindMaxUsingStringDatatype("Apple", "Peach", "Banana"));
                     Console.WriteLine("Maximum of three fruits is " + FindMaxUsingStringDatatype("Peach", "Apple", "Banana"));
                     Console.WriteLine("Maximum of three fruits is " + FindMaxUsingStringDatatype("Apple", "Peach", "Banana"));
                     Console.WriteLine("Maximum  of three fruits is " + FindMaxUsingStringDatatype("Banana", "Apple", "Peach"));
+                    break;
+                case 4:
+                    Console.WriteLine("Maximum of three numbers is " + FindMaxUsingGeneric(96, 90, 67));
+                    Console.WriteLine("Maximum of three numbers is " + FindMaxUsingGeneric(89.45f, 23.65f, 99.34f));
+                    Console.WriteLine("Maximum of Apple, Peach, Banana is " + FindMaxUsingGeneric("Apple", "Banana", "Peach"));
                     break;
                 case 2:
                     Console.WriteLine("enter the first number");
@@ -45,6 +51,8 @@
                     float x = Convert.ToSingle(Console.ReadLine());
                     Console.WriteLine("maximum number compare to three is  " + (FindMaxNumbersUsingFloatDatatype(v, w, x)));
                     break;
+
+
                 case 1:
                     Console.WriteLine("enter the first number");
                     int a = Convert.ToInt32(Console.ReadLine());
@@ -75,18 +83,24 @@
                     int l = Convert.ToInt32(Console.ReadLine());
                     Console.WriteLine("maximum number compare to three is  " + (FindMaxNumber(j, k, l)));
                     break;
-
-
-
-
-
-
-
-
+               
 
 
             }
         }
+               
+
+
+
+
+
+
+
+
+
+            
+        
+
 
         public static int FindMaxNumber(int firstNum, int secondNum, int thirdNum)
         {
@@ -136,6 +150,25 @@
 
             return max;
         }
+        public static T FindMaxUsingGeneric<T>(T a, T b, T c) where T : IComparable<T>
+        {
+            T max = a;
+
+
+            if (b.CompareTo(max) > 0)
+            {
+                max = b;
+            }
+
+            if (c.CompareTo(max) > 0)
+            {
+                max = c;
+            }
+
+
+            return max;
+        }
+
     }
     
 }
