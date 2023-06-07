@@ -83,7 +83,20 @@
                     int l = Convert.ToInt32(Console.ReadLine());
                     Console.WriteLine("maximum number compare to three is  " + (FindMaxNumber(j, k, l)));
                     break;
-               
+                    case 5;
+                    
+                    
+                        var intMaximumNumber = new MaximumNumber<int>(69,86,93);
+                        Console.WriteLine("Maximum of three numbers is " + intMaximumNumber.MaximumOfThree()); 
+
+                        var floatMaximumNumber = new MaximumNumber<float>(35.5f, 89.3f, 96.9f);
+                        Console.WriteLine("Maximum of 35.5, 89.3, 96.9" + floatMaximumNumber.MaximumOfThree()); 
+
+                        var stringMaximumNumber = new MaximumNumber<string>("Apple", "Peach", "Banana");
+                        Console.WriteLine("Maximum of Apple, Peach, Banana: " + stringMaximumNumber.MaximumOfThree()); 
+                    break;
+                    
+
 
 
             }
