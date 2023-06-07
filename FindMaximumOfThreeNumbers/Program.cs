@@ -5,7 +5,7 @@
        public static void Main(string[] args)
         {
             Console.WriteLine("choose what program u want");
-            Console.WriteLine("1.finding max number using integer datatype\n2.finding maximum using float datatype\n3.finding maximum using string datatype\n4.refactor the code using generics finding max all datatypes\n5.Refactor the code using generic class\n6.finding max of multiple numbers");
+            Console.WriteLine("1.finding max number using integer datatype\n2.finding maximum using float datatype\n3.finding maximum using string datatype\n4.refactor the code using generics finding max all datatypes\n5.Refactor the code using generic class\n6.finding max of multiple numbers\n7.print max number using generic internal print");
             int choose = Convert.ToInt32(Console.ReadLine());
             switch (choose)
             {
@@ -96,7 +96,7 @@
                         Console.WriteLine("Maximum of Apple, Peach, Banana: " + stringMaximumNumber.MaximumOfThree()); 
                     break;
                 case 6:
-                    var intMaxNum = new MaximumOfMultipleNumbers<int>(35,37,29,26,32);
+                    var intMaxNum = new MaximumOfMultipleNumbers<int>(35,37,29,26,32,67);
                     Console.WriteLine("Maximum of 35,37,29,26,32,67 " + intMaxNum.MaximumOfMultiple()); 
 
                     var floatMaxNum = new MaximumOfMultipleNumbers<float> (55.3f, 47.7f, 35.2f, 83.3f, 22.1f,23.6f);
@@ -105,7 +105,16 @@
                     var stringMaxNum = new MaximumOfMultipleNumbers<string> ("Apple", "Banana", "Peach", "grapes","watermellon ","Orange");
                     Console.WriteLine("Maximum of Apple, Banana, Peach, grapes,watermellon ,Orange" + stringMaxNum.MaximumOfMultiple());
                     break;
-                    
+                case 7:
+                    var intMax = new FindingMaximumOfMultipleNumbers<int>(35, 37, 29, 26, 32, 67);
+                     intMax.MaximumOfMultiple();
+
+                    var floatMax = new FindingMaximumOfMultipleNumbers<float>(55.3f, 47.7f, 35.2f, 83.3f, 22.1f, 23.6f);
+                     floatMax.MaximumOfMultiple();
+
+                    var stringMax = new FindingMaximumOfMultipleNumbers<string>("Apple", "Banana", "Peach", "grapes", "watermellon ", "Orange");
+                     stringMax.MaximumOfMultiple();
+                    break;
 
 
 
